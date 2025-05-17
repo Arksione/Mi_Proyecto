@@ -1,42 +1,44 @@
-# bucle_for_basico1.py
+#1: Básico
+print("Números del 0 al 100")
+for numero in range(101):
+    print(numero)
 
-# 1. Básico: imprime todos los números enteros del 0 al 100.
-print("Ejercicio 1: Básico")
-for i in range(0, 101):
-    print(i)
+#2: Múltiplos de 2
+print("Múltiplos de 2 del 2 hasta 500")
+for numero in range(2, 501):
+    if numero % 2 == 0:
+        print(numero)
 
-# 2. Múltiples de 2: imprime todos los números múltiplos de 2 entre 2 y 500
-print("\nEjercicio 2: Múltiples de 2")
-for i in range(2, 501, 2):
-    print(i)
-
-# 3. Contando Vanilla Ice
-print("\nEjercicio 3: Contando Vanilla Ice")
-for i in range(1, 101):
-    if i % 10 == 0:
+#3: Contando Vanilla Ice
+print("Contando Vanilla Ice")
+for numero in range(1, 101):
+    if numero % 10 == 0:
         print("baby")
-    elif i % 5 == 0:
+    elif numero % 5 == 0:
         print("ice ice")
     else:
-        print(i)
+        print(numero)
 
-# 4. Wow. Número gigante a la vista
-print("\nEjercicio 4: Wow. Número gigante a la vista")
+#4: Wow. Número gigante a la vista
+print("Sumar todos los pares del 0 al 500000")
 suma = 0
-for i in range(0, 500001, 2):
-    suma += i
-print(f"Suma total de números pares del 0 al 500000: {suma}")
+for numero in range(0, 500001):
+    if numero % 2 == 0:
+        suma += numero
+print("La suma total es:", suma)
 
-# 5. Regrésame al 3
-print("\nEjercicio 5: Regrésame al 3")
-for i in range(2024, 0, -3):
-    print(i)
+#5: Regrésame al 3
+print("Contar desde 2024 hacia atrás de 3 en 3")
+for numero in range(2024, 0, -3):
+    print(numero)
 
-# 6. Contador dinámico
-print("\nEjercicio 6: Contador dinámico")
+#6: Contador dinámico
+print("Contador dinámico")
 numInicial = 3
 numFinal = 10
 multiplo = 2
-for i in range(numInicial, numFinal + 1):
-    if i % multiplo == 0:
-        print(i)
+
+for numero in range(numInicial, numFinal + 1):
+    if numero % multiplo == 0:
+        print(numero)
+
