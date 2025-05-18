@@ -1,0 +1,136 @@
+#Ejercicio 1
+# Primero, definimos nuestras estructuras de datos
+
+matriz = [[10, 15, 20], [3, 7, 14]]
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"}
+]
+ciudades = {
+    "México": ["Ciudad de México", "Guadalajara", "Cancún"],
+    "Chile": ["Santiago", "Concepción", "Viña del Mar"]
+}
+coordenadas = [{"latitud": 8.2588997, "longitud": -84.9399704}]
+
+#Paso 1: Cambiar el valor 3 en matriz por 6
+print("Matriz antes del cambio:", matriz)
+matriz[1][0] = 6  # Accedemos a la segunda lista dentro de la matriz y cambiamos el primer valor
+print("Matriz después del cambio:", matriz)
+
+#Paso 2: Cambiar el nombre de "Ricky Martin" a "Enrique Martin Morales"
+print("Cantantes antes del cambio:", cantantes)
+cantantes[0]["nombre"] = "Enrique Martin Morales"  # Modificamos el valor del diccionario dentro de la lista
+print("Cantantes después del cambio:", cantantes)
+
+#Paso 3: Cambiar "Cancún" por "Monterrey" en ciudades
+print("Ciudades antes del cambio:", ciudades)
+ciudades["México"][2] = "Monterrey"  # Accedemos a la lista dentro del diccionario y modificamos el valor
+print("Ciudades después del cambio:", ciudades)
+
+#Paso 4: Cambiar la latitud en coordenadas a 9.9355431
+print("Coordenadas antes del cambio:", coordenadas)
+coordenadas[0]["latitud"] = 9.9355431  # Accedemos al diccionario dentro de la lista y modificamos el valor
+print("Coordenadas después del cambio:", coordenadas)
+
+
+
+#Ejercicio 2
+def iterarDiccionario(lista):
+    for diccionario in lista:
+        elementos = [f"{clave} - {valor}" for clave, valor in diccionario.items()]  # Creamos una lista con las claves y valores formateados
+        print(", ".join(elementos))  # Unimos los elementos con ", " y los imprimimos
+
+
+# Lista de diccionarios
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"},
+    {"nombre": "José José", "pais": "México"},
+    {"nombre": "Juan Luis Guerra", "pais": "República Dominicana"}
+]
+
+# Llamamos a la función
+iterarDiccionario(cantantes)
+
+#Ejercicio 3
+def iterarDiccionario2(llave, lista):
+    for diccionario in lista:  # Recorremos cada diccionario dentro de la lista
+        if llave in diccionario:  # Verificamos si la llave existe en el diccionario
+            print(diccionario[llave])  # Imprimimos el valor correspondiente
+
+# Lista de diccionarios
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"},
+    {"nombre": "José José", "pais": "México"},
+    {"nombre": "Juan Luis Guerra", "pais": "República Dominicana"}
+]
+
+# Llamadas de prueba
+iterarDiccionario2("nombre", cantantes)
+print("---")  # Separador para que sea más legible
+iterarDiccionario2("pais", cantantes)
+
+
+#ejercicio 4
+# Actualizar valores en diccionarios y listas
+matriz = [[10, 15, 20], [3, 7, 14]]
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"}
+]
+ciudades = {
+    "México": ["Ciudad de México", "Guadalajara", "Cancún"],
+    "Chile": ["Santiago", "Concepción", "Viña del Mar"]
+}
+coordenadas = [{"latitud": 8.2588997, "longitud": -84.9399704}]
+
+# Modificaciones
+matriz[1][0] = 6
+cantantes[0]["nombre"] = "Enrique Martin Morales"
+ciudades["México"][2] = "Monterrey"
+coordenadas[0]["latitud"] = 9.9355431
+
+# Función para iterar sobre una lista de diccionarios
+def iterarDiccionario(lista):
+    for diccionario in lista:
+        for clave, valor in diccionario.items():
+            print(f"{clave}: {valor}")
+        print()  # Espaciado para separar cada diccionario
+
+# Función para obtener valores de una lista de diccionarios
+def iterarDiccionario2(llave, lista):
+    for diccionario in lista:
+        if llave in diccionario:
+            print(diccionario[llave])
+
+# Función para recorrer un diccionario con listas como valores
+def imprimirInformacion(diccionario):
+    for clave, valores in diccionario.items():
+        print(f"{len(valores)} {clave.upper()}")  # Imprime el tamaño y la clave en mayúsculas
+        for valor in valores:
+            print(valor)
+        print()  # Espaciado para mejor lectura
+
+# Ejemplo de uso
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"},
+    {"nombre": "José José", "pais": "México"},
+    {"nombre": "Juan Luis Guerra", "pais": "República Dominicana"}
+]
+
+costa_rica = {
+    "ciudades": ["San José", "Limón", "Cartago", "Puntarenas"],
+    "comidas": ["gallo pinto", "casado", "tamales", "chifrijo", "olla de carne"]
+}
+
+# Pruebas
+print("Iterar diccionario:")
+iterarDiccionario(cantantes)
+print("---")
+print("Iterar diccionario2:")
+iterarDiccionario2("nombre", cantantes)
+print("---")
+print("Imprimir información:")
+imprimirInformacion(costa_rica)
